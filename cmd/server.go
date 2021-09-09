@@ -2,6 +2,12 @@ package cmd
 
 import (
 	"fmt"
+	"html/template"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
@@ -12,11 +18,6 @@ import (
 	"github.com/taoshihan1991/imaptool/tools"
 	"github.com/taoshihan1991/imaptool/ws"
 	"github.com/zh-five/xdaemon"
-	"html/template"
-	"io/ioutil"
-	"log"
-	"net/http"
-	"os"
 )
 
 var (
@@ -33,7 +34,7 @@ var serverCmd = &cobra.Command{
 }
 
 func init() {
-	serverCmd.PersistentFlags().StringVarP(&port, "port", "p", "8081", "监听端口号")
+	serverCmd.PersistentFlags().StringVarP(&port, "port", "p", "8082", "监听端口号")
 	serverCmd.PersistentFlags().BoolVarP(&daemon, "daemon", "d", false, "是否为守护进程模式")
 }
 func run() {

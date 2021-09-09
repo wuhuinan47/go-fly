@@ -229,10 +229,10 @@
    
 ```php
     //下面js路径和GOFLY_URL 都要改成自己的
-    <script src="https://gofly.sopans.com/assets/js/gofly-front.js"></script>
+    <script src="/assets/js/gofly-front.js"></script>
     <script>
         GOFLY.init({
-            GOFLY_URL:"https://gofly.sopans.com",
+            GOFLY_URL:"",
             GOFLY_KEFU_ID: "kefu2",
             GOFLY_BTN_TEXT: "客服在线 欢迎咨询",
             GOFLY_LANG:"cn"
@@ -243,7 +243,7 @@
    
 ### nginx部署
 
-访问：https://gofly.sopans.com
+访问：
 
 1.参考支持https的部署示例 , 注意反向代理的端口号和证书地址 , 不使用https也可以访问 , 只是不会有浏览器通知弹窗
 
@@ -381,10 +381,15 @@ location /
 ### 打赏作者
 
 
-<img src="https://gofly.sopans.com/static/images/alipay.jpg" width="280"  alt="支付宝"/>
-<img src="https://gofly.sopans.com/static/images/weixin.jpg" width="280"  alt="微信"/>
+<img src="/static/images/alipay.jpg" width="280"  alt="支付宝"/>
+<img src="/static/images/weixin.jpg" width="280"  alt="微信"/>
 
 ### 版权声明
 
 当前项目是完整功能代码 , 但是仍然仅支持个人演示测试 , 不包含线上使用 . 赞赏并联系作者后可得到作者授权 , 并且可以获取完整专属技术支持,包括安装/部署/bug修改以及后期功能升级 . 
 使用本软件时,请遵守当地法律法规,任何违法用途一切后果请自行承担.
+
+
+
+#### ADD RESTART FOR GO-FLY
+0 * * * * /mnt/go-fly/restart.sh
